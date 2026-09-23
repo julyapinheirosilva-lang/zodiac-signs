@@ -1,0 +1,176 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Seu Signo</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card principal">
+
+            <div id="simbolo" class="icone">✨</div>
+
+            <h1 id="nomeSigno">Seu Signo</h1>
+
+            <p id="periodo"></p>
+
+            <hr>
+
+            <h3>Sobre o signo</h3>
+
+            <p id="descricaoSigno"></p>
+
+            <h4>Elemento</h4>
+            <p id="elemento"></p>
+
+            <h4>Personalidade</h4>
+            <p id="personalidade"></p>
+
+            <a href="index.html" class="btn btn-primary">
+                Descobrir outro signo
+            </a>
+
+        </div>
+    </div>
+
+    <script>
+
+        const signos = {
+
+            aries: {
+                nome: "Áries ♈",
+                periodo: "21 de março a 19 de abril",
+                elemento: "Fogo 🔥",
+                descricao: "Áries é um signo associado à iniciativa, energia e coragem.",
+                personalidade: "Determinado, ativo, independente e aventureiro."
+            },
+
+            touro: {
+                nome: "Touro ♉",
+                periodo: "20 de abril a 20 de maio",
+                elemento: "Terra 🌱",
+                descricao: "Touro é associado à estabilidade, praticidade e persistência.",
+                personalidade: "Paciente, confiável, determinado e tranquilo."
+            },
+
+            gemeos: {
+                nome: "Gêmeos ♊",
+                periodo: "21 de maio a 20 de junho",
+                elemento: "Ar 💨",
+                descricao: "Gêmeos é associado à comunicação, curiosidade e criatividade.",
+                personalidade: "Comunicativo, curioso, inteligente e versátil."
+            },
+
+            cancer: {
+                nome: "Câncer ♋",
+                periodo: "21 de junho a 22 de julho",
+                elemento: "Água 💧",
+                descricao: "Câncer é associado à sensibilidade, família e proteção.",
+                personalidade: "Sensível, cuidadoso, protetor e carinhoso."
+            },
+
+            leao: {
+                nome: "Leão ♌",
+                periodo: "23 de julho a 22 de agosto",
+                elemento: "Fogo 🔥",
+                descricao: "Leão é associado à criatividade, expressão e confiança.",
+                personalidade: "Criativo, confiante, generoso e determinado."
+            },
+
+            virgem: {
+                nome: "Virgem ♍",
+                periodo: "23 de agosto a 22 de setembro",
+                elemento: "Terra 🌱",
+                descricao: "Virgem é associado à organização, atenção e praticidade.",
+                personalidade: "Organizado, observador, responsável e cuidadoso."
+            },
+
+            libra: {
+                nome: "Libra ♎",
+                periodo: "23 de setembro a 22 de outubro",
+                elemento: "Ar 💨",
+                descricao: "Libra é associado ao equilíbrio, diplomacia e harmonia.",
+                personalidade: "Diplomático, sociável, gentil e equilibrado."
+            },
+
+            escorpiao: {
+                nome: "Escorpião ♏",
+                periodo: "23 de outubro a 21 de novembro",
+                elemento: "Água 💧",
+                descricao: "Escorpião é associado à intensidade, determinação e profundidade.",
+                personalidade: "Intenso, determinado, reservado e observador."
+            },
+
+            sagitario: {
+                nome: "Sagitário ♐",
+                periodo: "22 de novembro a 21 de dezembro",
+                elemento: "Fogo 🔥",
+                descricao: "Sagitário é associado à aventura, liberdade e conhecimento.",
+                personalidade: "Aventureiro, otimista, sincero e curioso."
+            },
+
+            capricornio: {
+                nome: "Capricórnio ♑",
+                periodo: "22 de dezembro a 19 de janeiro",
+                elemento: "Terra 🌱",
+                descricao: "Capricórnio é associado à responsabilidade, disciplina e objetivos.",
+                personalidade: "Responsável, disciplinado, persistente e organizado."
+            },
+
+            aquario: {
+                nome: "Aquário ♒",
+                periodo: "20 de janeiro a 18 de fevereiro",
+                elemento: "Ar 💨",
+                descricao: "Aquário é associado à criatividade, independência e inovação.",
+                personalidade: "Criativo, independente, original e curioso."
+            },
+
+            peixes: {
+                nome: "Peixes ♓",
+                periodo: "19 de fevereiro a 20 de março",
+                elemento: "Água 💧",
+                descricao: "Peixes é associado à imaginação, sensibilidade e empatia.",
+                personalidade: "Sensível, imaginativo, gentil e intuitivo."
+            }
+        };
+
+        const parametros = new URLSearchParams(window.location.search);
+        const signoEscolhido = parametros.get("signo");
+
+        const signo = signos[signoEscolhido];
+
+        if (signo) {
+
+            document.getElementById("nomeSigno").textContent = signo.nome;
+            document.getElementById("periodo").textContent = signo.periodo;
+            document.getElementById("elemento").textContent = signo.elemento;
+            document.getElementById("descricaoSigno").textContent = signo.descricao;
+            document.getElementById("personalidade").textContent = signo.personalidade;
+
+        } else {
+
+            document.getElementById("nomeSigno").textContent = "Signo não encontrado";
+            document.getElementById("descricaoSigno").textContent =
+                "Não foi possível encontrar o signo informado.";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+```
